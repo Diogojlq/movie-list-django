@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="{% static "movies_list/style.css" %}" rel="stylesheet">
+</head>
+<body id="a">  
+
+  <div class="container align-content-center">
+
+    <h1>MOVIES LIST</h1>
+    <div> 
+      <h2>Here's the movies you've added :</h2>
+    </div>
+      {% for movie in movie_list %}
+      <ul>
+          <li>Movie name : {{movie.movie_name}} 
+            <li> Note : {{movie.note}}</li>
+          </li>
+        </ul>
+          <ul>
+            <ul><a href="/movies/update_movie/{{movie.id}}">Update this movie</a></ul>
+              <ul><a href="/movies/movie_delete/{{movie.id}}">Delete this movie</a>
+              </ul>
+          </ul>       
+        
+      {% endfor %}
+    </li>
+    </div>
+    <div class="container align"><li><a href="{% url 'movie_form' %}">Add a movie</a></li></div>
+</body>
+</html>
