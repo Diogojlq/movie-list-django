@@ -14,7 +14,7 @@ class MovieCreateView(CreateView):
 
 class MovieListView(ListView):
     model = Movie
-    template_name = 'movies_list/home.html'
+    template_name = 'movies_list/index.html'
     
 class MovieDeleteView(DeleteView):
     model = Movie
